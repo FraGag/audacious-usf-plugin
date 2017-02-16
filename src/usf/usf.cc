@@ -114,8 +114,8 @@ int LoadUSF(const gchar * fn, VFSFile * fil)
     }
 
     usf_fread(buffer, 4, 1, fil);
-    if (buffer[0] != 'P' && buffer[1] != 'S' && buffer[2] != 'F'
-	&& buffer[3] != 0x21) {
+    if (buffer[0] != 'P' || buffer[1] != 'S' || buffer[2] != 'F'
+	|| buffer[3] != 0x21) {
 	printf("USF: Invalid header in file!\n");
 	return 0;
     }
