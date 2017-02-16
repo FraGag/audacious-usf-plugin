@@ -103,6 +103,6 @@ void SetupTLB(void);
 void TLB_Probe(void);
 void TLB_Read(void);
 uint32_t TranslateVaddr(uintptr_t * Addr);
-void WriteTLBEntry(int32_t index);
+void WriteTLBEntry(uint32_t index);
 
 #endif

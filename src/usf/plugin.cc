@@ -76,7 +76,7 @@ void USFPlugin::add_buffer(unsigned char *buf, unsigned int length){
 		return;
 	}
 	
-    int32_t i = 0, out = 0;
+    unsigned int i = 0, out = 0;
     double vol = 1.0;
 
     if (!cpu_running)

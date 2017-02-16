@@ -3187,7 +3187,7 @@ void InitilizeRegSet(REG_INFO * RegSet)
 
     RegSet->Stack_TopPos = 0;
     for (count = 0; count < 8; count++) {
-	RegSet->x86fpu_MappedTo[count] = -1;
+	RegSet->x86fpu_MappedTo[count] = static_cast<uint32_t>(-1);
 	RegSet->x86fpu_State[count] = FPU_Unkown;
 	RegSet->x86fpu_RoundingModel[count] = RoundDefault;
     }
@@ -3473,7 +3473,7 @@ uint32_t InheritParentInfo(BLOCK_SECTION * Section)
 	}
 
 	for (count2 = 0; count2 < 8; count2++) {
-	    if (FpuMappedTo(count2) == (uint32_t) - 1) {
+	    if (FpuMappedTo(count2) == static_cast<uint32_t>(-1)) {
 		NeedSync = 1;
 	    }
 	}

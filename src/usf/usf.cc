@@ -320,7 +320,7 @@ void usf_mseek(USFPlugin * context, gint millisecond)
 	is_seeking = 1;
 	seek_time = (double) millisecond;
     }
-#warning "NOOOOOOOO"
+//#warning "NOOOOOOOO"
     /////////////////////////////////////    context->output->flush(millisecond / 1000);
 }
 

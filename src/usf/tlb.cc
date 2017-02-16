@@ -30,7 +30,7 @@
 FASTTLB FastTlb[64];
 TLB tlb[32];
 
-void SetupTLB_Entry(int32_t Entry);
+void SetupTLB_Entry(uint32_t Entry);
 
 uint32_t AddressDefined(uintptr_t VAddr)
 {
@@ -86,7 +86,7 @@ test=(BYTE *) VirtualAlloc( 0x10, 0x70000, MEM_RESERVE, PAGE_EXECUTE_READWRITE);
 	}
 */
 
-void SetupTLB_Entry(int Entry)
+void SetupTLB_Entry(uint32_t Entry)
 {
     uint32_t FastIndx;
 
@@ -205,7 +205,7 @@ uint32_t TranslateVaddr(uintptr_t * Addr)
     return 1;
 }
 
-void WriteTLBEntry(int32_t index)
+void WriteTLBEntry(uint32_t index)
 {
     uint32_t FastIndx;
 

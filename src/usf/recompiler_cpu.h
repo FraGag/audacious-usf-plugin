@@ -214,7 +214,7 @@ typedef struct {
     uint32_t NoOfIMEMBlocks;
     uint32_t NoOfPifRomBlocks;
 } N64_Blocks_t;
-#warning "eh? N64_Blocks_t N64_Blocks;"
+//#warning "eh? N64_Blocks_t N64_Blocks;"
 #pragma pack(pop)
 
 uint8_t *Compiler4300iBlock(void);

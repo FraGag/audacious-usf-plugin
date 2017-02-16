@@ -1010,19 +1010,19 @@ int UnMap_8BitTempReg(BLOCK_SECTION * Section)
 
 void UnMap_AllFPRs(BLOCK_SECTION * Section)
 {
-    int32_t StackPos;
+    uint32_t StackPos;
 
     for (;;) {
 	int i, StartPos;
 	StackPos = StackTopPos;
-	if (FpuMappedTo(StackTopPos) != -1) {
+	if (FpuMappedTo(StackTopPos) != static_cast<uint32_t>(-1)) {
 	    UnMap_FPR(Section, FpuMappedTo(StackTopPos), 1);
 	    continue;
 	}
 	//see if any more registers mapped
 	StartPos = StackTopPos;
 	for (i = 0; i < 8; i++) {
-	    if (FpuMappedTo((StartPos + i) & 7) != -1) {
+	    if (FpuMappedTo((StartPos + i) & 7) != static_cast<uint32_t>(-1)) {
 		fpuIncStack((int32_t *) & StackTopPos);
 	    }
 	}
@@ -1124,12 +1124,12 @@ void UnMap_FPR(BLOCK_SECTION * Section, int32_t Reg,
 	    }
 	    x86Protected(TempReg) = 0;
 	    FpuRoundingModel(RegPos) = RoundDefault;
-	    FpuMappedTo(RegPos) = -1;
+	    FpuMappedTo(RegPos) = static_cast<uint32_t>(-1);
 	    FpuState(RegPos) = FPU_Unkown;
 	} else {
 	    fpuFree((i - StackTopPos) & 7);
 	    FpuRoundingModel(i) = RoundDefault;
-	    FpuMappedTo(i) = -1;
+	    FpuMappedTo(i) = static_cast<uint32_t>(-1);
 	    FpuState(i) = FPU_Unkown;
 	}
 	return;
