@@ -18,7 +18,7 @@
           src = ./.;
 
           buildInputs = with pkgs; [
-            (audacious.override { audacious-plugins = null; })
+            audacious-bare
             glib
           ];
           nativeBuildInputs = with pkgs; [
