@@ -24,13 +24,11 @@
           nativeBuildInputs = with pkgs; [
             autoconf
             automake
+            autoreconfHook
             gettext
             pkg-config
           ];
 
-          preConfigure = ''
-            ./autogen.sh
-          '';
           # TODO: This plugin doesn't actually use GTK+.
           # This is a leftover from the audacious-plugins version it was extracted from.
           configureFlags = [ "--disable-gtk" ];

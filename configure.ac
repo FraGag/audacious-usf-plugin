@@ -25,6 +25,7 @@ AC_CHECK_FUNCS([mkdtemp])
 
 dnl gettext
 dnl =======
+AM_GNU_GETTEXT_VERSION([0.25])
 AM_GNU_GETTEXT([external])
 if test "$MSGFMT" = ":" ; then
     AC_MSG_ERROR([msgfmt was not found; have you installed gettext?])
